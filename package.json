@@ -59,7 +59,8 @@
     "workerDirectory": "public"
   },
   "lint-staged": {
-    "*.{ts,tsx}": "eslint --cache --fix",
-    "*.{js,tsx}": "prettier --write"
+    "*.{ts,tsx}": "yarn lint",
+    "*.{js,tsx}": "yarn prettier:check",
+    "*.{js,tsx}": "yarn test"
   }
 }
