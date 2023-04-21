@@ -51,8 +51,7 @@
                 "groups": [
                     "internal",
                     "external"
-                ],
-                "newlines-between": "always"
+                ]
             }
         ],
         "@typescript-eslint/type-annotation-spacing": [
