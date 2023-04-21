@@ -61,8 +61,7 @@
     "workerDirectory": "public"
   },
   "lint-staged": {
-    "*.{ts,tsx}": "yarn prettier:check",
-    "*.{ts,tsx}": "yarn lint",
+    "*.{ts,tsx}": ["yarn prettier:check", "yarn lint"],
     "*.test.{ts,tsx}": "yarn test"
   }
 }
