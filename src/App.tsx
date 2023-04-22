@@ -12,7 +12,7 @@ function App() {
   useEffect(() => {
     if (connectMSW) {
       (async () => {
-        const response = await request.get<string[]>('/boards');
+        const response = await request.get<BoardList>('/boards');
         setResponseState(response);
       })();
     }

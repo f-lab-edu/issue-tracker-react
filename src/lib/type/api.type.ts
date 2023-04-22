@@ -14,4 +14,5 @@ export type RequestOptions<T> = {
 };
 
 export type RequestParams = [url: string, config?: AxiosRequestConfig];
-export type RequestParamsWithData<T> = [url: string, data?: T, config?: AxiosRequestConfig];
+export type RequestParamsWithData = [url: string, data?: any, config?: AxiosRequestConfig];
+export type RequestArguements = RequestParams | RequestParamsWithData;
