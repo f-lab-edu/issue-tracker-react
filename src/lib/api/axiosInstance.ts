@@ -13,24 +13,24 @@ axiosInstance.interceptors.request.use(
 );
 
 axiosInstance.interceptors.response.use(
-  (response: any) => response,
-  (error: any) => {
+  (response) => response,
+  (error) => {
     const customError = handleErrorResponse(error);
     return Promise.reject(customError);
   },
 );
 
 export class CustomError extends Error {
-  originError: any;
+  originError: Error;
 
-  constructor(name: string | null, message: string | undefined, originError: any) {
+  constructor(name: string | null, message: string | undefined, originError: Error) {
     super(message);
     this.name = name || 'CustomError';
     this.originError = originError;
   }
 }
 
-export const handleErrorResponse = (error: any) => {
+export const handleErrorResponse = (error: CustomError | Error) => {
   const errorMessage = error?.message || 'Unknown error';
   const customError = new CustomError(null, errorMessage, error);
 
