@@ -19,7 +19,7 @@ F-Lab 프론트엔드 과정 중 세 번째 [**리액트와 타입스크립트�
 - [Vite](https://vitejs-kr.github.io/guide)
 - [Yarn Berry](https://yarnpkg.com/)
 - [vanilla-extract.style](https://vanilla-extract.style/)
-- [Zod Schema Validation](https://vee-validate.logaretm.com/v4/integrations/zod-schema-validation/)
+- [Zod](https://zod.dev/)
 - [Axios](https://axios-http.com/kr/docs/intro)
 - [MSW](https://mswjs.io/)
 - [Jest](https://jestjs.io/)
