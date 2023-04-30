@@ -18,6 +18,9 @@
     "msw": "^1.2.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-icons": "^4.8.0",
+    "react-router": "^6.11.0",
+    "react-router-dom": "^6.11.0",
     "zod": "^3.21.4"
   },
   "devDependencies": {
@@ -35,6 +38,7 @@
     "@typescript-eslint/eslint-plugin": "^5.57.1",
     "@typescript-eslint/parser": "^5.57.1",
     "@vanilla-extract/css": "^1.11.0",
+    "@vanilla-extract/jest-transform": "^1.1.1",
     "@vanilla-extract/vite-plugin": "^3.8.0",
     "@vitejs/plugin-react": "^4.0.0-beta.0",
     "eslint": "^8.38.0",
@@ -61,7 +65,10 @@
     "workerDirectory": "public"
   },
   "lint-staged": {
-    "*.{ts,tsx}": ["yarn prettier:check", "yarn lint"],
+    "*.{ts,tsx}": [
+      "yarn prettier:check",
+      "yarn lint"
+    ],
     "*.test.{ts,tsx}": "yarn test"
   }
 }
