@@ -24,7 +24,7 @@ const pageHeaderLogo = style({
 
 const pageBody = style({
   display: 'flex',
-  flexDirection: 'column',
+  flexDirection: 'row',
   height: styleToken.size.bodyHeight,
   padding: 64,
   backgroundColor: styleToken.color.background,

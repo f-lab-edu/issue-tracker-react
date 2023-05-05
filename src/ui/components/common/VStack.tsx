@@ -1,20 +1,10 @@
-import { PropsWithChildren } from 'react';
+import { HTMLAttributes, PropsWithChildren } from 'react';
 import { vStackStyle } from '@ui/components/common/common.css';
 
-type Props = {
-  className?: string;
-  alignItems?: string;
-  justifyContent?: string;
-  margin?: string | number;
-  padding?: string | number;
-  height?: string | number;
-  border?: string;
-  backgroundColor?: string;
-  [key: string]: any;
-};
+type Props = HTMLAttributes<HTMLDivElement>;
 
 const VStack = ({ children, className, ...props }: PropsWithChildren<Props>) => (
-  <div className={`${vStackStyle.container} ${className}`} style={props}>
+  <div className={`${vStackStyle.container} ${className}`} {...props}>
     {children}
   </div>
 );
