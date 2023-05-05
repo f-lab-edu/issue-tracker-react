@@ -24,7 +24,7 @@ const baseButton = style([
   {
     height: '32px',
     borderRadius: '4px',
-    background: styleToken.color.gray['100'],
+    background: styleToken.color.gray100,
     selectors: {
       '& + &': {
         marginLeft: '8px',

@@ -7,7 +7,7 @@ import { boardItemStyle } from '@ui/components/board/board.css';
 const BoardItem = () => (
   <HStack className={boardItemStyle.container}>
     <VStack flex="1">
-      <MdEditCalendar color={styleToken.color.gray['600']} size={18} />
+      <MdEditCalendar color={styleToken.color.gray600} size={18} />
     </VStack>
     <VStack className={boardItemStyle.content} flex="8">
       <div>할 일 - 1</div>

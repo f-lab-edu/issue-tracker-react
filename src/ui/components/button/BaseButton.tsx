@@ -5,13 +5,13 @@ import styleToken from '@ui/core/styleToken.css';
 const backgroundColorStyle = {
   primary: styleToken.color.primary,
   secondary: styleToken.color.secondary,
-  default: styleToken.color.gray['300'],
+  default: styleToken.color.gray300,
 };
 
 const fontColorStyle = {
-  primary: styleToken.color.white['1000'],
-  secondary: styleToken.color.white['1000'],
-  default: styleToken.color.black['1000'],
+  primary: styleToken.color.white,
+  secondary: styleToken.color.white,
+  default: styleToken.color.black,
 };
 
 type ButtonColor = 'primary' | 'secondary' | 'default';

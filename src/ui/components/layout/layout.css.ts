@@ -14,7 +14,7 @@ const pageHeaderContainer = style({
   justifyContent: 'space-between',
   height: styleToken.size.headerHeight,
   padding: '0 48px',
-  backgroundColor: styleToken.color.orange['700'],
+  backgroundColor: styleToken.color.orange700,
 });
 
 const pageHeaderLogo = style({

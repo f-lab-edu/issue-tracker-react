@@ -26,7 +26,7 @@ const badge = style({
   width: 'auto',
   height: '26px',
   alignItems: 'center',
-  backgroundColor: styleToken.color.orange['300'],
+  backgroundColor: styleToken.color.orange300,
   padding: '6px 10px',
   borderRadius: '8px',
   color: styleToken.color.text,

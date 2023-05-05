@@ -9,7 +9,7 @@ const boardTitleCount = style({
 const boardItemContainer = style({
   minHeight: '64px',
   padding: styleToken.space[2],
-  backgroundColor: styleToken.color.white['1000'],
+  backgroundColor: styleToken.color.white,
   borderRadius: styleToken.space[1],
   cursor: 'grab',
   selectors: {
@@ -42,14 +42,14 @@ const boardColumnCreateContainer = style({
   height: '64px',
   marginTop: '34px',
   padding: 0,
-  backgroundColor: styleToken.color.white['1000'],
-  border: `1px dashed ${styleToken.color.black['1000']}`,
+  backgroundColor: styleToken.color.white,
+  border: `1px dashed ${styleToken.color.black}`,
   borderRadius: styleToken.space[1],
   cursor: 'pointer',
   flex: 'unset',
   selectors: {
     '&:hover': {
-      backgroundColor: styleToken.color.orange['100'],
+      backgroundColor: styleToken.color.orange100,
     },
   },
 });

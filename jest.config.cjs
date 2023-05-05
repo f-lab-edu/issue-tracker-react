@@ -24,5 +24,8 @@ module.exports = {
         '^@/(.*)$': '<rootDir>/src/$1',
         '^@lib/(.*)$': '<rootDir>/src/lib/$1',
         '^@ui/(.*)$': '<rootDir>/src/ui/$1',
-    }
+    },
+    transformIgnorePatterns: [
+        "/node_modules/(?!react-icons)/"
+    ]
 };

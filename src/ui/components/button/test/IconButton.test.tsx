@@ -2,32 +2,11 @@ import { fireEvent, render, screen, waitFor } from '@testing-library/react';
 import { IconButton } from '@ui/components/button';
 
 describe('IconButton', () => {
-  jest.mock('@ui/core/styleToken.css', () => ({
-    color: {
-      primary: '#000',
-      secondary: '#000',
-      gray: {
-        300: '#000',
-      },
-      white: {
-        1000: '#000',
-      },
-      black: {
-        1000: '#000',
-      },
-    },
-  }));
-
-  jest.mock('@ui/components/button/button.css', () => ({
-    iconButtonStyle: {
-      container: 'iconButtonStyle.container',
-    },
-  }));
-
-  const onClick = jest.fn();
+  const handleClick = jest.fn();
 
   beforeEach(() => {
-    render(<IconButton onClick={onClick} icon="add" />);
+    handleClick.mockReset();
+    render(<IconButton onClick={handleClick} icon="add" />);
   });
 
   it('버튼 클릭 후 포커스를 확인합니다.', () => {
@@ -42,7 +21,7 @@ describe('IconButton', () => {
     const button = screen.getByRole('button');
     fireEvent.click(button);
     waitFor(() => {
-      expect(onClick).toBeCalled();
+      expect(handleClick).toBeCalled();
     });
   });
 });
