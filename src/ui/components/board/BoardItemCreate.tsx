@@ -4,9 +4,9 @@ import styleToken from '@ui/core/styleToken.css';
 import { Textarea } from '@ui/components/input';
 
 const BoardItemCreate = () => (
-  <VStack marginTop={styleToken.space[2]}>
+  <VStack style={{ marginTop: styleToken.space[2] }}>
     <Textarea name="content" value="" onChange={() => {}} placeholder="내용을 입력해주세요." />
-    <HStack marginTop={styleToken.space[2]}>
+    <HStack style={{ marginTop: styleToken.space[2] }}>
       <BaseButton onClick={() => {}} color="default">
         취소
       </BaseButton>
