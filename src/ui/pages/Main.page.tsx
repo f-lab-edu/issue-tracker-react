@@ -1,7 +1,6 @@
 import { PageHeader, PageLayout, PageBody } from '@ui/components/layout';
-import { Board } from '@ui/components/board';
-import BoardColumnCreate from '@ui/components/board/BoardColumnCreate';
-import DraggableArea from '@ui/components/common/DraggableArea';
+import { Board, BoardColumnCreate } from '@ui/components/board';
+import { DraggableArea } from '@ui/components/common';
 import { boardFixture } from '@lib/fixture/board.fixture';
 
 const MainPage = () => (
