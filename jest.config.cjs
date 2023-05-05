@@ -1,5 +1,6 @@
 module.exports = {
     transform: {
+        '\\.css\\.ts$': '@vanilla-extract/jest-transform',
         '^.+\\.(t|j)sx?$': [
             '@swc/jest',
             {
@@ -13,7 +14,7 @@ module.exports = {
             },
         ],
     },
-    testMatch: ['<rootDir>/src/**/?(*.)+(spec|test).[jt]s?(x)'],
+    testMatch: ['**/?(*.)+(test).[jt]s?(x)', '!**/*.vitest.test*'],
     setupFilesAfterEnv: ['<rootDir>/jest.setup.js'],
     testPathIgnorePatterns: ['node_modules'],
     moduleDirectories: ['node_modules', '<rootDir>/'],
@@ -23,5 +24,8 @@ module.exports = {
         '^@/(.*)$': '<rootDir>/src/$1',
         '^@lib/(.*)$': '<rootDir>/src/lib/$1',
         '^@ui/(.*)$': '<rootDir>/src/ui/$1',
-    }
+    },
+    transformIgnorePatterns: [
+        "/node_modules/(?!react-icons)/"
+    ]
 };

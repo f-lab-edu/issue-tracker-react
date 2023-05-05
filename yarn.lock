@@ -1238,6 +1238,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@remix-run/router@npm:1.6.0":
+  version: 1.6.0
+  resolution: "@remix-run/router@npm:1.6.0"
+  checksum: 9f08f20500b2fc9d689c06c3c25504baf2ece861a9f4d0c49ba043ef4040a96b85c15a57a1c11377e64bf78b727ce8fb58b300345642efb05a75d49e4b638344
+  languageName: node
+  linkType: hard
+
 "@sinclair/typebox@npm:^0.25.16":
   version: 0.25.24
   resolution: "@sinclair/typebox@npm:0.25.24"
@@ -1878,7 +1885,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@vanilla-extract/integration@npm:^6.0.2":
+"@vanilla-extract/integration@npm:^6.0.2, @vanilla-extract/integration@npm:^6.2.0":
   version: 6.2.1
   resolution: "@vanilla-extract/integration@npm:6.2.1"
   dependencies:
@@ -1896,6 +1903,16 @@ __metadata:
     vite: ^4.1.4
     vite-node: ^0.28.5
   checksum: 28bda6804f09f6dd046fb3d3d2cc2f7b5a1143e476645d34a9e92eb9156f44d63200e1035932e8a76d4a77b5c20807907294476f6d7fc3b43e9f93670ff87953
+  languageName: node
+  linkType: hard
+
+"@vanilla-extract/jest-transform@npm:^1.1.1":
+  version: 1.1.1
+  resolution: "@vanilla-extract/jest-transform@npm:1.1.1"
+  dependencies:
+    "@vanilla-extract/integration": ^6.2.0
+    esbuild: 0.17.6
+  checksum: 98f88ddc2e9a618328adc3ed0c59e3426cee29ee1f3f3310fc21f7f46f6ccc1183d0adb6aa51eafdc2aaf8e6948b732bed676af0be7c566fd3374ad1c2861b6d
   languageName: node
   linkType: hard
 
@@ -4876,6 +4893,7 @@ __metadata:
     "@typescript-eslint/eslint-plugin": ^5.57.1
     "@typescript-eslint/parser": ^5.57.1
     "@vanilla-extract/css": ^1.11.0
+    "@vanilla-extract/jest-transform": ^1.1.1
     "@vanilla-extract/vite-plugin": ^3.8.0
     "@vitejs/plugin-react": ^4.0.0-beta.0
     axios: ^1.3.6
@@ -4898,6 +4916,9 @@ __metadata:
     prettier: ^2.8.7
     react: ^18.2.0
     react-dom: ^18.2.0
+    react-icons: ^4.8.0
+    react-router: ^6.11.0
+    react-router-dom: ^6.11.0
     typescript: ^5.0.2
     vite: ^4.3.0
     vite-tsconfig-paths: ^4.2.0
@@ -6740,6 +6761,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"react-icons@npm:^4.8.0":
+  version: 4.8.0
+  resolution: "react-icons@npm:4.8.0"
+  peerDependencies:
+    react: "*"
+  checksum: 4dbba7ad989c295b410e19b2a702722dae44368cb04b6515f9471353552f31ac80bd350f121d5bff79f81504b84039ede44d09e9f035f48bb1032e6eace126c4
+  languageName: node
+  linkType: hard
+
 "react-is@npm:^16.13.1":
   version: 16.13.1
   resolution: "react-is@npm:16.13.1"
@@ -6765,6 +6795,30 @@ __metadata:
   version: 0.14.0
   resolution: "react-refresh@npm:0.14.0"
   checksum: dc69fa8c993df512f42dd0f1b604978ae89bd747c0ed5ec595c0cc50d535fb2696619ccd98ae28775cc01d0a7c146a532f0f7fb81dc22e1977c242a4912312f4
+  languageName: node
+  linkType: hard
+
+"react-router-dom@npm:^6.11.0":
+  version: 6.11.0
+  resolution: "react-router-dom@npm:6.11.0"
+  dependencies:
+    "@remix-run/router": 1.6.0
+    react-router: 6.11.0
+  peerDependencies:
+    react: ">=16.8"
+    react-dom: ">=16.8"
+  checksum: 85c9e302de8f5730bd63fc1f0f712ca0645b7ec843828f43b60712b0a38105d101c7412487eeb35cc25d940cc026e8832e6492eba9772d26779e2856f18e7923
+  languageName: node
+  linkType: hard
+
+"react-router@npm:6.11.0, react-router@npm:^6.11.0":
+  version: 6.11.0
+  resolution: "react-router@npm:6.11.0"
+  dependencies:
+    "@remix-run/router": 1.6.0
+  peerDependencies:
+    react: ">=16.8"
+  checksum: c27d64b074da711d59a94d7b64fe82360da8a49077a5e8326c27e9fb48a7650080f73b5ba3b94d0b11f2d7e315255fabc3bad818cd26d1cec3a52220ad9d64cd
   languageName: node
   linkType: hard
 
