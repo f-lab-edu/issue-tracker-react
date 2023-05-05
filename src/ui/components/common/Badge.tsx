@@ -6,7 +6,7 @@ type Props = {
   width?: string;
 };
 const Badge = ({ children, backgroundColor, width }: PropsWithChildren<Props>) => (
-  <div
+  <span
     className={badgeStyle.container}
     title={children as string}
     style={{
@@ -15,7 +15,7 @@ const Badge = ({ children, backgroundColor, width }: PropsWithChildren<Props>) =
     }}
   >
     {children}
-  </div>
+  </span>
 );
 
 export default Badge;
