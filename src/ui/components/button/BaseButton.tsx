@@ -1,13 +1,6 @@
-import { PropsWithChildren } from 'react';
+import { HTMLAttributes, PropsWithChildren } from 'react';
 import { baseButtonStyle } from '@ui/components/button/button.css';
 import styleToken from '@ui/core/styleToken.css';
-
-type Props = {
-  className?: string;
-  color?: keyof typeof backgroundColorStyle;
-  onClick: () => void;
-  [key: string]: any;
-};
 
 const backgroundColorStyle = {
   primary: styleToken.color.primary,
@@ -20,6 +13,16 @@ const fontColorStyle = {
   secondary: styleToken.color.white['1000'],
   default: styleToken.color.black['1000'],
 };
+
+type ButtonColor = 'primary' | 'secondary' | 'default';
+
+type ButtonProps = {
+  className?: string;
+  color?: ButtonColor;
+  onClick: () => void;
+};
+
+type Props = ButtonProps & HTMLAttributes<HTMLButtonElement>;
 
 const BaseButton = ({ children, className, color = 'primary', onClick, ...props }: PropsWithChildren<Props>) => (
   <button
