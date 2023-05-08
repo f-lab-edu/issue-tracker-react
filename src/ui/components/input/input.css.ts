@@ -16,6 +16,20 @@ const textarea = style({
   },
 });
 
-export const textareaStyle = {
-  container: textarea,
+const input = style({
+  width: '100%',
+  minHeight: '40px',
+  border: `1px solid ${styleToken.color.border}`,
+  borderRadius: styleToken.space[1],
+  padding: styleToken.space[2],
+  selectors: {
+    '&:focus': {
+      outline: 'none',
+    },
+  },
+});
+
+export const textStyle = {
+  textarea,
+  input,
 };
