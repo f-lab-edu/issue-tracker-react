@@ -79,6 +79,10 @@ const COLOR_PROPERTIES = {
   secondary: '#42aaff',
 };
 
+const Z_INDEX_PROPERTIES = {
+  modal: '1000',
+};
+
 const headerHeight = 80;
 const SIZE_PROPERTIES = {
   headerHeight: `${headerHeight}px`,
@@ -90,6 +94,7 @@ const styleToken = createGlobalTheme(':root', {
   space: SPACE_PROPERTIES,
   size: SIZE_PROPERTIES,
   color: COLOR_PROPERTIES,
+  zIndex: Z_INDEX_PROPERTIES,
 });
 
 export default styleToken;
