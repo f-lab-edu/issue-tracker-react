@@ -1,4 +1,4 @@
-import React, { createContext, useState, useRef, useContext, useCallback, PropsWithChildren, ReactNode, cloneElement, ReactElement } from 'react';
+import React, { createContext, useState, useContext, useCallback, PropsWithChildren, ReactNode, cloneElement, isValidElement, ReactElement } from 'react';
 import { Dialog } from '@ui/components/dialog';
 
 export type DialogOption = {
@@ -6,7 +6,7 @@ export type DialogOption = {
   enableBackdropClick?: boolean;
 };
 
-type DialogSubmitResult = any;
+type DialogSubmitResult = unknown;
 
 type DialogOpenFn = (children: ReactNode, option?: DialogOption) => Promise<DialogSubmitResult> | null;
 export const DialogContext = createContext<DialogOpenFn | null>(null);
@@ -25,12 +25,12 @@ type dialogState = {
 
 export default function DialogProvider({ children }: PropsWithChildren) {
   const [dialogs, setDialogs] = useState<dialogState[]>([]);
-  const modalCounter = useRef(0);
+  const [modalCounter, setModalCounter] = useState(0);
 
   const openDialog: DialogOpenFn = useCallback((children, option) => {
     if (React.isValidElement(children)) {
-      modalCounter.current += 1;
-      const key = `modal-${modalCounter.current}`;
+      setModalCounter((prevModalCounter) => prevModalCounter + 1);
+      const key = `modal-${modalCounter}`;
 
       setDialogs((prevDialogs) => [
         ...prevDialogs,
@@ -66,22 +66,26 @@ export default function DialogProvider({ children }: PropsWithChildren) {
     <>
       <DialogContext.Provider value={openDialog}>
         {children}
-        {dialogs.map(({ content, options, key }, index) => (
-          <Dialog
-            key={key}
-            open
-            onClose={() => closeDialog(key)}
-            onSubmit={(result) => submitDialog(key, result)}
-            enableBackdropClick={options.enableBackdropClick}
-            style={index < dialogs.length - 1 ? { display: 'none' } : {}}
-          >
-            {content &&
-              cloneElement(content as ReactElement, {
-                onClose: () => closeDialog(key),
-                onSubmit: (result: DialogSubmitResult) => submitDialog(key, result),
-              })}
-          </Dialog>
-        ))}
+        {dialogs.map(({ content, options, key }, index) => {
+          const isHidden = index < dialogs.length - 1;
+          const dialogStyle = isHidden ? { display: 'none' } : {};
+          return (
+            <Dialog
+              key={key}
+              open
+              onClose={() => closeDialog(key)}
+              onSubmit={(result) => submitDialog(key, result)}
+              enableBackdropClick={options.enableBackdropClick}
+              style={dialogStyle}
+            >
+              {isValidElement(content) &&
+                cloneElement(content as ReactElement, {
+                  onClose: () => closeDialog(key),
+                  onSubmit: (result: DialogSubmitResult) => submitDialog(key, result),
+                })}
+            </Dialog>
+          );
+        })}
       </DialogContext.Provider>
     </>
   );
