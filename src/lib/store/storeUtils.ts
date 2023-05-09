@@ -9,8 +9,11 @@ const storeUtils = <State, Action>(store: BaseStore<State, Action>) => {
 
   const dispatch = (action: Action) => {
     store.dispatch(action);
-    stateRef.current = store.getState();
-    forceRender({});
+    const nextState = store.getState();
+    if (stateRef.current !== nextState) {
+      stateRef.current = store.getState();
+      forceRender({});
+    }
   };
 
   useEffect(() => {
