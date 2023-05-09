@@ -1,26 +1,12 @@
-import React from 'react';
-import { textareaStyle } from '@ui/components/input/input.css';
+import { forwardRef, Ref, TextareaHTMLAttributes } from 'react';
+import { textStyle } from '@ui/components/input/input.css.ts';
 
-type Props = {
-  name: string;
-  className?: string;
-  onChange: (e: React.ChangeEvent<HTMLTextAreaElement>) => void;
-  value: string;
-  placeholder?: string;
-  maxLength?: number;
-  disabled?: boolean;
-};
+interface TextareaProps extends TextareaHTMLAttributes<HTMLTextAreaElement> {
+  ref?: Ref<HTMLTextAreaElement>;
+}
 
-const Textarea = ({ name, className, onChange, value, placeholder, maxLength = 10, disabled }: Props) => (
-  <textarea
-    name={name}
-    className={`${textareaStyle.container} ${className}`}
-    onChange={onChange}
-    value={value}
-    placeholder={placeholder}
-    maxLength={maxLength}
-    disabled={disabled}
-  />
-);
+const Textarea = forwardRef<HTMLTextAreaElement, TextareaProps>(({ name, className, maxLength = 10, ...props }, ref) => (
+  <textarea name={name} className={`${textStyle.textarea} ${className}`} maxLength={maxLength} ref={ref} {...props} />
+));
 
 export default Textarea;
