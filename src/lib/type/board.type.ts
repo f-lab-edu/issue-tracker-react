@@ -9,3 +9,10 @@ export type BoardItemType = {
   title: string;
   author: string;
 };
+
+export type BoardParamsType = {
+  boardId: string;
+  title: string;
+  itemId: string;
+  targetIndex: number;
+};
