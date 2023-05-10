@@ -7,7 +7,7 @@ type Props = {} & BoardColumnType;
 
 const Board = ({ boardId, title, items }: Props) => (
   <VStack className={boardStyle.container}>
-    <BoardHeader title={title} count={items.length} />
+    <BoardHeader boardId={boardId} title={title} count={items.length} />
     <BoardBody boardId={boardId} items={items} />
   </VStack>
 );
