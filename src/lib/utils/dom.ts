@@ -1,6 +1,6 @@
 export type MoveToElementInfo = {
-  parentId: string;
-  nodeId: string;
+  boardId: string;
+  itemId: string;
   targetIndex: number;
 };
 
@@ -23,8 +23,8 @@ export const getMoveToElementInfo = ($node: HTMLElement): MoveToElementInfo | nu
   const findNodeIndex = [...parentNode.children].findIndex((child) => (child as HTMLElement).dataset.id === $currentNode.dataset.id);
   if (findNodeIndex !== -1) {
     return {
-      parentId: parentNode.dataset.id,
-      nodeId: $currentNode.dataset.id,
+      boardId: parentNode.dataset.id,
+      itemId: $currentNode.dataset.id,
       targetIndex: findNodeIndex,
     } as MoveToElementInfo;
   }
