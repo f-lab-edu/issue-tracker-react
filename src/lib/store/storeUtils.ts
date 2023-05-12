@@ -12,7 +12,6 @@ const storeUtils = <State, Action>(store: BaseStore<State, Action>) => {
     const nextState = store.getState();
     if (stateRef.current !== nextState) {
       stateRef.current = store.getState();
-      forceRender({});
     }
   };
 
