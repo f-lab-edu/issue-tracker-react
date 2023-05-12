@@ -52,6 +52,13 @@ const boardItemAuthor = style({
   marginLeft: styleToken.space[1],
 });
 
+const boardItemEmptyContainer = style({
+  display: 'flex',
+  alignItems: 'center',
+  justifyContent: 'center',
+  cursor: 'unset',
+});
+
 const boardColumnCreateContainer = style({
   display: 'flex',
   alignItems: 'center',
@@ -92,6 +99,10 @@ export const boardItemStyle = {
   contentBody: boardItemContentBody,
   contentFooter: boardItemContentFooter,
   author: boardItemAuthor,
+};
+
+export const boardItemEmptyStyle = {
+  container: boardItemEmptyContainer,
 };
 
 export const boardColumnCreateStyle = {
