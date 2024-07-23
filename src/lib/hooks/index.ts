@@ -1,1 +1,1 @@
-export { default as useConnectedMSW } from './useConnectedMSW.tsx';
+export { default as useConnectedMSW } from './useConnectedMSW';

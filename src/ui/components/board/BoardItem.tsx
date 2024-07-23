@@ -3,20 +3,23 @@ import { HStack, VStack } from '@ui/components/common';
 import styleToken from '@ui/core/styleToken.css';
 import { IconButton } from '@ui/components/button';
 import { boardItemStyle } from '@ui/components/board/board.css';
+import { BoardItemType } from '@lib/type/board.type';
 
-const BoardItem = () => (
-  <HStack className={boardItemStyle.container}>
-    <VStack flex="1">
+type Props = {} & BoardItemType;
+
+const BoardItem = ({ itemId, title, author }: Props) => (
+  <HStack className={boardItemStyle.container} data-id={itemId} draggable>
+    <VStack className={boardItemStyle.contentHeader}>
       <MdEditCalendar color={styleToken.color.gray600} size={18} />
     </VStack>
-    <VStack className={boardItemStyle.content} flex="8">
-      <div>할 일 - 1</div>
+    <VStack className={boardItemStyle.contentBody}>
+      <div>{title}</div>
       <div>
         <span>added by</span>
-        <strong className={boardItemStyle.author}>bytrustu</strong>
+        <strong className={boardItemStyle.author}>{author}</strong>
       </div>
     </VStack>
-    <HStack flex="1" alignItems="flex-start" justifyContent="flex-end">
+    <HStack className={boardItemStyle.contentFooter}>
       <IconButton
         icon="close"
         onClick={() => {}}

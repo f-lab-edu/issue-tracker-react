@@ -1,12 +1,16 @@
 import { VStack } from '@ui/components/common';
 import { BoardItem } from '@ui/components/board';
 import styleToken from '@ui/core/styleToken.css';
+import { BoardColumnType } from '@lib/type/board.type';
 
-const BoardBody = () => (
-  <VStack marginTop={styleToken.space[3]}>
-    {Array.from({ length: 10 }).map((_, index) => (
-      <BoardItem key={index} />
+type Props = Pick<BoardColumnType, 'boardId' | 'items'>;
+
+const BoardBody = ({ boardId, items }: Props) => (
+  <VStack data-id={boardId} data-type="parent" style={{ marginTop: styleToken.space[3] }}>
+    {items.map((item) => (
+      <BoardItem key={item.itemId} itemId={item.itemId} title={item.title} author={item.author} />
     ))}
+    <div className="last" style={{ height: 50 }} />
   </VStack>
 );
 

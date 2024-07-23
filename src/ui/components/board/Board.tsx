@@ -1,15 +1,14 @@
 import { VStack } from '@ui/components/common';
 import { BoardHeader, BoardBody } from '@ui/components/board';
+import { boardStyle } from '@ui/components/board/board.css';
+import { BoardColumnType } from '@lib/type/board.type';
 
-type Props = {
-  title: string;
-  items: any[];
-};
+type Props = {} & BoardColumnType;
 
-const Board = ({ title, items = [] }: Props) => (
-  <VStack width="320px" height="auto" minHeight="64px" marginRight="32px">
+const Board = ({ boardId, title, items }: Props) => (
+  <VStack className={boardStyle.container}>
     <BoardHeader title={title} count={items.length} />
-    <BoardBody />
+    <BoardBody boardId={boardId} items={items} />
   </VStack>
 );
 

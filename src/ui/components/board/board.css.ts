@@ -1,6 +1,13 @@
 import { style } from '@vanilla-extract/css';
 import styleToken from '@ui/core/styleToken.css';
 
+const boardContainer = style({
+  width: '320px',
+  height: 'auto',
+  minHeight: '64px',
+  marginRight: '32px',
+});
+
 const boardTitleCount = style({
   marginLeft: styleToken.space[2],
   fontSize: styleToken.fontSize[1],
@@ -19,8 +26,13 @@ const boardItemContainer = style({
   },
 });
 
-const boardItemContent = style({
+const boardItemContentHeader = style({
+  flex: 1,
+});
+
+const boardItemContentBody = style({
   display: 'flex',
+  flex: 8,
   flexDirection: 'column',
   justifyContent: 'space-between',
   color: styleToken.color.text,
@@ -28,9 +40,15 @@ const boardItemContent = style({
   marginTop: styleToken.space[0],
 });
 
+const boardItemContentFooter = style({
+  flex: 1,
+  alignItems: 'flex-start',
+  justifyContent: 'flex-end',
+});
+
 const boardItemAuthor = style({
   fontWeight: 700,
-  color: styleToken.color.black['1000'],
+  color: styleToken.color.black,
   marginLeft: styleToken.space[1],
 });
 
@@ -60,13 +78,19 @@ const boardColumnCreateText = style({
   marginLeft: styleToken.space[1],
 });
 
+export const boardStyle = {
+  container: boardContainer,
+};
+
 export const boardTitleStyle = {
   count: boardTitleCount,
 };
 
 export const boardItemStyle = {
   container: boardItemContainer,
-  content: boardItemContent,
+  contentHeader: boardItemContentHeader,
+  contentBody: boardItemContentBody,
+  contentFooter: boardItemContentFooter,
   author: boardItemAuthor,
 };
 
